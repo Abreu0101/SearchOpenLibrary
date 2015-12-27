@@ -17,16 +17,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NcN-RE-563">
-                                <rect key="frame" x="20" y="112" width="560" height="468"/>
-                                <color key="backgroundColor" red="0.81176470590000005" green="0.81176470590000005" blue="0.81176470590000005" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                            </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Search a Book In OpenLibrary.org" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ugB-tO-bnz">
                                 <rect key="frame" x="20" y="37" width="560" height="29"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="29" id="VAf-bb-Q5q"/>
+                                    <constraint firstAttribute="height" constant="29" id="xEm-yS-t4w"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
@@ -35,7 +29,7 @@
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="By ISBN (Ex. 978-84-376-0494-7)" textAlignment="natural" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="Ero-NQ-CRR">
                                 <rect key="frame" x="20" y="74" width="560" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="bc8-sS-X7G"/>
+                                    <constraint firstAttribute="height" constant="30" id="0aG-Sx-2ln"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="search"/>
@@ -43,20 +37,73 @@
                                     <action selector="searchBook:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="LC4-Jt-UBP"/>
                                 </connections>
                             </textField>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lGT-6R-zZ2">
+                                <rect key="frame" x="20" y="159" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Auq-zV-TZs"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yFB-n3-4CS">
+                                <rect key="frame" x="20" y="299" width="150" height="150"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="150" id="N2W-Lu-TPR"/>
+                                    <constraint firstAttribute="height" constant="150" id="y39-Au-BBh"/>
+                                </constraints>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Authors" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="L5q-HI-eex">
+                                <rect key="frame" x="20" y="215" width="560" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="3N3-xc-Va3"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title Book" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d4x-FF-n8T">
+                                <rect key="frame" x="20" y="120" width="560" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="yWT-Js-Vny"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wXx-kP-7W8">
+                                <rect key="frame" x="20" y="253" width="560" height="34"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="34" id="zIM-yI-l5B"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="NcN-RE-563" secondAttribute="trailing" constant="20" id="3Yk-hy-iSf"/>
+                            <constraint firstItem="L5q-HI-eex" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="471-vx-6yC"/>
                             <constraint firstItem="Ero-NQ-CRR" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" id="4G0-mA-IOR"/>
-                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="NcN-RE-563" secondAttribute="bottom" constant="20" id="9G3-2P-25u"/>
-                            <constraint firstAttribute="trailing" secondItem="ugB-tO-bnz" secondAttribute="trailing" constant="20" id="KCf-de-5kl"/>
-                            <constraint firstAttribute="trailing" secondItem="Ero-NQ-CRR" secondAttribute="trailing" constant="20" id="PhT-nU-qmx"/>
-                            <constraint firstItem="Ero-NQ-CRR" firstAttribute="top" secondItem="ugB-tO-bnz" secondAttribute="bottom" constant="8" id="Txl-WE-EQl"/>
-                            <constraint firstItem="Ero-NQ-CRR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="U6e-c2-Gbh"/>
-                            <constraint firstItem="NcN-RE-563" firstAttribute="top" secondItem="Ero-NQ-CRR" secondAttribute="bottom" constant="8" id="YLd-b2-qbm"/>
-                            <constraint firstItem="NcN-RE-563" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="aUa-Ga-7ye"/>
-                            <constraint firstItem="ugB-tO-bnz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="esu-Cf-dxI"/>
-                            <constraint firstItem="ugB-tO-bnz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="kx0-qO-6WF"/>
+                            <constraint firstItem="ugB-tO-bnz" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="17" id="4NQ-3Q-IL2"/>
+                            <constraint firstItem="Ero-NQ-CRR" firstAttribute="top" secondItem="ugB-tO-bnz" secondAttribute="bottom" constant="8" id="4XP-O1-Z7I"/>
+                            <constraint firstItem="yFB-n3-4CS" firstAttribute="top" secondItem="wXx-kP-7W8" secondAttribute="bottom" constant="12" id="5Xr-0m-HI9"/>
+                            <constraint firstItem="ugB-tO-bnz" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="9C3-v2-0Dv"/>
+                            <constraint firstItem="wXx-kP-7W8" firstAttribute="top" secondItem="L5q-HI-eex" secondAttribute="bottom" constant="8" id="BJd-j9-7q8"/>
+                            <constraint firstItem="L5q-HI-eex" firstAttribute="top" secondItem="lGT-6R-zZ2" secondAttribute="bottom" constant="16" id="EdX-bY-uYb"/>
+                            <constraint firstItem="yFB-n3-4CS" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="IJa-5d-5eh"/>
+                            <constraint firstItem="Ero-NQ-CRR" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="Mht-Xg-ZA3"/>
+                            <constraint firstItem="d4x-FF-n8T" firstAttribute="top" secondItem="Ero-NQ-CRR" secondAttribute="bottom" constant="16" id="OTA-fX-5Tf"/>
+                            <constraint firstItem="lGT-6R-zZ2" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="P4C-94-gio"/>
+                            <constraint firstAttribute="trailing" secondItem="L5q-HI-eex" secondAttribute="trailing" constant="20" id="SwQ-WK-HqC"/>
+                            <constraint firstAttribute="trailing" secondItem="Ero-NQ-CRR" secondAttribute="trailing" constant="20" id="Xdb-xY-5C2"/>
+                            <constraint firstAttribute="trailing" secondItem="ugB-tO-bnz" secondAttribute="trailing" constant="20" id="eXN-Tl-jHT"/>
+                            <constraint firstItem="d4x-FF-n8T" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="jy1-4f-u9H"/>
+                            <constraint firstItem="lGT-6R-zZ2" firstAttribute="top" secondItem="d4x-FF-n8T" secondAttribute="bottom" constant="-1" id="lEU-Ib-gsL"/>
+                            <constraint firstItem="wXx-kP-7W8" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="rMA-uG-lyW"/>
+                            <constraint firstAttribute="trailing" secondItem="lGT-6R-zZ2" secondAttribute="trailing" constant="20" id="rMR-TJ-0cg"/>
+                            <constraint firstAttribute="trailing" secondItem="wXx-kP-7W8" secondAttribute="trailing" constant="20" id="sh8-v7-j58"/>
+                            <constraint firstAttribute="trailing" secondItem="d4x-FF-n8T" secondAttribute="trailing" constant="20" id="w2V-p8-Cxn"/>
                         </constraints>
                         <variation key="default">
                             <mask key="constraints">
@@ -65,7 +112,9 @@
                         </variation>
                     </view>
                     <connections>
-                        <outlet property="tvResponse" destination="NcN-RE-563" id="Zz5-C9-NWQ"/>
+                        <outlet property="imgBook" destination="yFB-n3-4CS" id="ZzY-tF-Cem"/>
+                        <outlet property="lblAuthorNames" destination="wXx-kP-7W8" id="rC0-Ms-sMF"/>
+                        <outlet property="lblTitle" destination="lGT-6R-zZ2" id="38i-NI-MYu"/>
                         <outlet property="txtBookISBN" destination="Ero-NQ-CRR" id="fYm-A4-NvV"/>
                     </connections>
                 </viewController>

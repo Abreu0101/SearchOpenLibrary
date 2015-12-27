@@ -11,14 +11,25 @@ import UIKit
 class ViewController: UIViewController {
 
     @IBOutlet var txtBookISBN: UITextField!
-    @IBOutlet var tvResponse: UITextView!
+    @IBOutlet var lblTitle: UILabel!
+    @IBOutlet var imgBook: UIImageView!
+    @IBOutlet var lblAuthorNames: UILabel!
+    
     
     @IBAction func searchBook(sender: AnyObject) {
         self.txtBookISBN.resignFirstResponder()
         getBookByISBN(txtBookISBN.text!)
     }
     
+    func cleanInterface(){
+        self.lblTitle.text = ""
+        self.lblAuthorNames.text = ""
+        self.imgBook.image = nil
+    }
+    
     func getBookByISBN(isbn:String){
+        
+        
         
         let session = NSURLSession.sharedSession()
         
@@ -36,8 +47,36 @@ class ViewController: UIViewController {
                         if let response = response as? NSHTTPURLResponse{
                             
                             if response.statusCode == 200{
-                                let info = String(data: data!, encoding: NSUTF8StringEncoding)
-                                self.tvResponse.text = info
+                                do{
+                                    let json = try NSJSONSerialization.JSONObjectWithData(data!, options: NSJSONReadingOptions.MutableLeaves) as! NSDictionary
+                                    
+                                    if let book = json.objectForKey("ISBN:\(isbn)") as? NSDictionary{
+                                        
+                                        if let title = book.objectForKey("title") as? String{
+                                            self.lblTitle.text = title
+                                        }
+                                        
+                                        if let authors = book.objectForKey("authors") as? Array<NSDictionary>{
+                                            var authorResult = ""
+                                            for dictAuthor in authors{
+                                                if let nameAuthor = dictAuthor.objectForKey("name") as? String{
+                                                    authorResult += nameAuthor + "\n"
+                                                }
+                                            }
+                                            self.lblAuthorNames.text = authorResult
+                                        }
+                                        
+                                        if let covers = book.objectForKey("cover") as? NSDictionary{
+                                            if let thumbnailURL = covers.objectForKey("medium") as? String{
+                                                self.showImageBook(thumbnailURL)
+                                            }
+                                        }
+                                        
+                                    }
+                                }catch _ {
+                                    self.showMessage("Error to process JSON")
+                                }
+                               
                             }else{
                                 self.showMessage((error?.localizedDescription)!)
                             }
@@ -49,6 +88,30 @@ class ViewController: UIViewController {
             showMessage("URL mal formada.")
         }
   
+    }
+    
+    func showImageBook(urlThumbnail:String){
+        
+        let session = NSURLSession.sharedSession()
+        let url = NSURL(string: urlThumbnail)
+        
+        session.dataTaskWithURL(url!) { (data:NSData?, response:NSURLResponse?, error:NSError?) -> Void in
+            
+            dispatch_async(dispatch_get_main_queue(), { () -> Void in
+                if let error = error{
+                    self.showMessage(error.localizedDescription)
+                }else{
+                    if let response = response as? NSHTTPURLResponse{
+                        
+                        if response.statusCode == 200{
+                            self.imgBook.image = UIImage(data: data!)
+                        }else{
+                            self.showMessage((error?.localizedDescription)!)
+                        }
+                    }
+                }
+            })
+        }.resume()
     }
     
     func showMessage(message:String){
