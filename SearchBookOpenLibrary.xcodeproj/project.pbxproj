@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5BEDCAB41C39984700F78A78 /* RecentSearchTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BEDCAB31C39984700F78A78 /* RecentSearchTableViewController.swift */; };
 		5BF972FD1C26DD240065448D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF972FC1C26DD240065448D /* AppDelegate.swift */; };
 		5BF972FF1C26DD240065448D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5BF972FE1C26DD240065448D /* ViewController.swift */; };
 		5BF973021C26DD240065448D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5BF973001C26DD240065448D /* Main.storyboard */; };
@@ -15,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5BEDCAB31C39984700F78A78 /* RecentSearchTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecentSearchTableViewController.swift; sourceTree = "<group>"; };
 		5BF972F91C26DD240065448D /* SearchBookOpenLibrary.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SearchBookOpenLibrary.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5BF972FC1C26DD240065448D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5BF972FE1C26DD240065448D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -60,6 +62,7 @@
 				5BF973031C26DD240065448D /* Assets.xcassets */,
 				5BF973051C26DD240065448D /* LaunchScreen.storyboard */,
 				5BF973081C26DD240065448D /* Info.plist */,
+				5BEDCAB31C39984700F78A78 /* RecentSearchTableViewController.swift */,
 			);
 			path = SearchBookOpenLibrary;
 			sourceTree = "<group>";
@@ -137,6 +140,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				5BF972FF1C26DD240065448D /* ViewController.swift in Sources */,
+				5BEDCAB41C39984700F78A78 /* RecentSearchTableViewController.swift in Sources */,
 				5BF972FD1C26DD240065448D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
